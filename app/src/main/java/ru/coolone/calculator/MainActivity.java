@@ -9,8 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         MINUS,
         NULL
     }
+
+    /**
+     * @param _operation Operation id
+     * @return Operation char
+     */
     private char operationToChar(Operation _operation)
     {
         char operationChar = ' ';
@@ -95,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public Operation operation = Operation.NULL;
 
+    /**
+     * @param first First num
+     * @param _operation Operation between nums
+     * @param second Second num
+     * @return Result of operation
+     */
     // Operation execute
     private double operationExec(double first, Operation _operation, double second)
     {
@@ -120,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
         return _result;
     }
 
+    /**
+     * @param numStr Num, trat will be checked
+     * @return Num validity (for convert to double)
+     */
     private boolean validNumStr(String numStr)
     {
         return !numStr.isEmpty() &&
@@ -134,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unchecked")
     private <T extends View> SparseArray<T> findViewsByIds(int ... viewIds)
     {
-        SparseArray<T> arrRet = new SparseArray<T>();
+        SparseArray<T> arrRet = new SparseArray<>();
 
         // Find array of viewIds
         for(int mViewId : viewIds)
@@ -197,9 +210,12 @@ public class MainActivity extends AppCompatActivity {
         return ret;
     }
 
+    /**
+     * Refresh's buttons and textViews
+     */
     private void refreshUi()
     {
-        // --- Update ui ---
+        // --- Refresh ---
 
         // -- Text views --
 
