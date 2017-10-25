@@ -8,13 +8,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="72sp"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textViewFirst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLength="@integer/maxTextViewLengthWithDots"
             android:textColor="@color/colorPrimaryActive"
             android:textSize="36sp" />
 
@@ -46,6 +47,7 @@
             android:id="@+id/textViewResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLength="@integer/maxTextViewLengthWithDots"
             android:textColor="@color/colorPrimaryActive"
             android:textSize="36sp" />
     </LinearLayout>
@@ -61,42 +63,42 @@
             android:gravity="center">
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_1"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button2"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_2"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button3"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_3"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/buttonPlus"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/button_plus"
-                android:background="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
         </TableRow>
@@ -107,42 +109,42 @@
             android:gravity="center">
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_4"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button5"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_5"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button6"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_6"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/buttonMinus"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/button_minus"
-                android:background="@color/colorPrimaryDark"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
         </TableRow>
@@ -153,42 +155,42 @@
             android:gravity="center">
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button7"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_7"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button8"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_8"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button9"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/button_9"
                 android:background="@color/colorPrimary"
+                android:text="@string/button_9"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/buttonMultiply"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/button_multiple"
                 android:background="@color/colorPrimaryDark"
+                android:text="@string/button_multiple"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
         </TableRow>
@@ -199,42 +201,42 @@
             android:gravity="center">
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/buttonComma"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_comma"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/button0"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:text="@string/button_0"
-                android:background="@color/colorPrimary"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/buttonClear"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/button_clear"
                 android:background="@color/colorPrimary"
+                android:text="@string/button_clear"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/buttonDivide"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/button_divide"
                 android:background="@color/colorPrimaryDark"
+                android:text="@string/button_divide"
                 android:textColor="@color/colorPrimaryActive"
                 android:textSize="36sp" />
         </TableRow>

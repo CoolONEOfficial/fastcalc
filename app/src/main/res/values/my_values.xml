@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="maxTextViewIntegerLength">6</integer>
+    <integer name="maxTextViewDecimalLength">3</integer>
+    <integer name="maxTextViewLengthWithDots">9</integer>
+    // 6 + 3
+</resources>

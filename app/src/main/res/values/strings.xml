@@ -21,4 +21,8 @@
     <string name="button_multiple">*</string>
 
     <string name="text_view_equal">=</string>
+
+    <string name="num_dialog_title">Full number</string>
+    <string name="num_dialog_button_copy">Copy to clipboard</string>
+    <string name="num_dialog_toast_copy"> copied to clipboard</string>
 </resources>
