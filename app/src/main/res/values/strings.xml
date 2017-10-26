@@ -24,5 +24,7 @@
 
     <string name="num_dialog_title">Full number</string>
     <string name="num_dialog_button_copy">Copy to clipboard</string>
-    <string name="num_dialog_toast_copy"> copied to clipboard</string>
+    <string name="num_dialog_toast_copy">copied to clipboard</string>
+    <string name="toast_max_integer_length">integer numbers is max length!</string>
+    <string name="toast_max_decimal_length">decimal numbers is max length!</string>
 </resources>

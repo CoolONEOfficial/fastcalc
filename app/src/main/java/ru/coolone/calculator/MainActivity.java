@@ -3,10 +3,7 @@ package ru.coolone.calculator;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
@@ -111,7 +108,7 @@ public class MainActivity extends AppCompatActivity
 
 	/**
 	 * @param first      First num
-	 * @param _operation Operation between nums
+	 * @param _operation Operation between numbers
 	 * @param second     Second num
 	 * @return Result of operation
 	 */
@@ -141,7 +138,7 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	/**
-	 * @param numStr Num, trat will be checked
+	 * @param numStr Num, that will be checked
 	 * @return Num validity (for convert to double)
 	 */
 	private boolean validNumStr(String numStr)
@@ -199,7 +196,7 @@ public class MainActivity extends AppCompatActivity
 	 */
 	private String formatNumStr(String numStr, NullsMode nullsMode, DotsMode dotsMode)
 	{
-		String ret = "";
+		StringBuilder ret = new StringBuilder();
 
 		int fractionIndex = numStr.indexOf('.');
 
@@ -216,55 +213,55 @@ public class MainActivity extends AppCompatActivity
 			if (mRetId != 0 &&
 					mRetId % 3 == 0)
 			{
-				ret += ',';
+				ret.append(',');
 			}
 
-			ret += mRetChar;
+			ret.append(mRetChar);
 		}
 
 		// Add "..." (dots)
 		if(dotsMode == DotsMode.ON &&
 				fractionIndex > maxIntegerLen)
 		{
-			ret = ret.substring(0, maxIntegerLen + 1) + "...";
+			ret = new StringBuilder(ret.substring(0, maxIntegerLen + 1) + "...");
 		}
 		else
 		{
 			// Add fraction part
-			if (nullsMode == NullsMode.DELETE)
+			if (nullsMode == NullsMode.DELETE &&
+					fractionIndex != -1)
 			{
 				// Add without end nulls
-				if (fractionIndex != -1)
+				String fractionStr = numStr.substring(fractionIndex + 1);
+
+				// Limit length
+				if (fractionStr.length() > maxFractionLen)
+					fractionStr = fractionStr.substring(0, maxFractionLen);
+
+				// Delete end nulls
+				for (int mFractionId = fractionStr.length() - 1; mFractionId >= 0; mFractionId--)
 				{
-					String fractionStr = numStr.substring(fractionIndex + 1);
+					char mFractionChar = fractionStr.charAt(mFractionId);
 
-					// Limit length
-					if (fractionStr.length() > maxFractionLen)
-						fractionStr = fractionStr.substring(0, maxFractionLen - 1);
-
-					// Delete end nulls
-					for (int mFractionId = fractionStr.length() - 1; mFractionId >= 0; mFractionId--)
-					{
-						char mFractionChar = fractionStr.charAt(mFractionId);
-
-						if (mFractionChar == '0')
-							fractionStr = fractionStr.substring(0, fractionStr.length() - 1);
-					}
-
-					if (!fractionStr.isEmpty())
-						ret += "." + fractionStr;
+					if (mFractionChar == '0')
+						fractionStr = fractionStr.substring(0, fractionStr.length() - 1);
+					else
+						break;
 				}
+
+				if (!fractionStr.isEmpty())
+					ret.append(".").append(fractionStr);
 			} else
 			{
 				// Add all
 				if (fractionIndex != -1)
 				{
-					ret += numStr.substring(fractionIndex);
+					ret.append(numStr.substring(fractionIndex));
 				}
 			}
 		}
 
-		return ret;
+		return ret.toString();
 	}
 
 	/**
@@ -288,6 +285,7 @@ public class MainActivity extends AppCompatActivity
 	{
 		ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 		ClipData clip = ClipData.newPlainText("number", text);
+		assert clipboard != null;
 		clipboard.setPrimaryClip(clip);
 	}
 
@@ -456,7 +454,8 @@ public class MainActivity extends AppCompatActivity
 						lenGood = true;
 					else
 						// Show error
-						showToast(String.valueOf(maxIntegerLen) + " numbers is max length!");
+						showToast(String.valueOf(maxIntegerLen) +
+								" " + getResources().getString(R.string.toast_max_integer_length));
 				} else
 				{
 					// Check decimal length
@@ -464,7 +463,8 @@ public class MainActivity extends AppCompatActivity
 						lenGood = true;
 					else
 						// Show error
-						showToast(String.valueOf(maxFractionLen) + " fraction numbers is max length!");
+						showToast(String.valueOf(maxFractionLen) +
+								" " + getResources().getString(R.string.toast_max_decimal_length));
 				}
 
 				if (lenGood)
@@ -605,7 +605,7 @@ public class MainActivity extends AppCompatActivity
 
 			if (!textView.getText().toString().isEmpty())
 			{
-				String numStr = "";
+				String numStr;
 				switch (textViewId)
 				{
 				case R.id.textViewFirst:
