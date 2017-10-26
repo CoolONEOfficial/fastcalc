@@ -3,5 +3,4 @@
     <integer name="maxTextViewIntegerLength">6</integer>
     <integer name="maxTextViewDecimalLength">3</integer>
     <integer name="maxTextViewLengthWithDots">9</integer>
-
 </resources>
