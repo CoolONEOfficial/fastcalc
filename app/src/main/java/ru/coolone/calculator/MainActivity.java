@@ -374,34 +374,34 @@ public class MainActivity extends AppCompatActivity
 		// - Operations -
 
 		boolean buttonComparison = (
-				!firstStr.isEmpty() ||
+
 						!secondStr.isEmpty()
 		);
 
 		// Divide
 		buttons.get(R.id.buttonDivide).setTextColor(getResources().getColor(
-				operation != Operation.DIVIDE &&
+				operation != Operation.DIVIDE ||
 						buttonComparison ?
 						R.color.colorPrimaryActive :
 						R.color.colorPrimaryInactive));
 
 		// Multiply
 		buttons.get(R.id.buttonMultiply).setTextColor(getResources().getColor(
-				operation != Operation.MULTIPLY &&
+				operation != Operation.MULTIPLY ||
 						buttonComparison ?
 						R.color.colorPrimaryActive :
 						R.color.colorPrimaryInactive));
 
 		// Plus
 		buttons.get(R.id.buttonPlus).setTextColor(getResources().getColor(
-				operation != Operation.PLUS &&
+				operation != Operation.PLUS ||
 						buttonComparison ?
 						R.color.colorPrimaryActive :
 						R.color.colorPrimaryInactive));
 
 		// Minus
 		buttons.get(R.id.buttonMinus).setTextColor(getResources().getColor(
-				operation != Operation.MINUS &&
+				operation != Operation.MINUS ||
 						buttonComparison ?
 						R.color.colorPrimaryActive :
 						R.color.colorPrimaryInactive));
